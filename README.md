@@ -16,9 +16,10 @@ While codeless connectors do not have code, the configuration is in JSON format 
 
 ### About this Codeless Connector for Airtable Audit Logs
 
-The codeless connector in this repository is configured to poll the [Airtable Audit Logs event retrieval endpoint](https://airtable.com/developers/web/api/audit-log-events) every 5 minutes and request up to 100 events per page. If there is another page of results available, the connector will automatically retrieve the next page of events.
-
-The example connector is configured to add audit log events from Airtable to the `AirtableAuditLogs_CL` table. If the table does not yet exist, the codeless connector will create it. 
+The codeless connector example in this repository, [`Azure_Sentinel_Codeless_Connector.json`](./Azure_Sentinel_Codeless_Connector.json), is configured to:
+- Poll the [Airtable Audit Logs event retrieval endpoint](https://airtable.com/developers/web/api/audit-log-events) every 5 minutes and request up to 100 events per page. If there is another page of results available, the connector will automatically retrieve the next page of events.
+- Retrieve all event types (you can find a list with their definitions [here](https://airtable.com/developers/web/api/audit-log-event-types)).
+- Configured to add audit log events from Airtable to the `AirtableAuditLogs_CL` table. If the table does not yet exist, the codeless connector will create it. 
 
 
 ### Setup / deploy
