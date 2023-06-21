@@ -32,7 +32,7 @@
           "id": "AirtableAuditLogsCCP",
           "title": "Airtable Audit Logs",
           "publisher": "Airtable Labs",
-          "descriptionMarkdown": "This [Airtable](https://airtable.com) data connector provides the capability to ingest [Airtable Audit Logs](https://airtable.com/developers/web/api/audit-logs-overview) events into Microsoft Sentinel. \n\nThis data connector is not supported by Formagrid Inc (Airtable) or part of the Airtable Service. It is made available on an 'as is' basis and provided without express or implied warranties of any kind.",
+          "descriptionMarkdown": "This Airtable data connector provides the capability to ingest Airtable Audit Logs (https://airtable.com/developers/web/api/audit-logs-overview) events into Microsoft Sentinel. \n\nThis data connector is not supported by Formagrid Inc (Airtable) or part of the Airtable Service. It is made available on an 'as is' basis and provided without express or implied warranties of any kind.",
           "graphQueriesTableName": "AirtableAuditLogs_CL",
           "graphQueries": [
             {
@@ -89,7 +89,7 @@
             "customs": [
               {
                 "name": "Airtable Audit Logs",
-                "description": "A [personal access token](https://support.airtable.com/docs/creating-and-using-api-keys-and-access-tokens) (from a user or [service account](https://support.airtable.com/docs/en/service-accounts-overview) with admin privileges) with the [enterprise.auditLogs:read](https://airtable.com/developers/web/api/scopes#enterprise-audit-logs-read) scope (entered as 'API key' below)"
+                "description": "A personal access token (https://support.airtable.com/docs/creating-and-using-api-keys-and-access-tokens) (from a user or service account (https://support.airtable.com/docs/en/service-accounts-overview) with admin privileges) with the enterprise.auditLogs:read (https://airtable.com/developers/web/api/scopes#enterprise-audit-logs-read) scope (entered as 'API key' below)"
               }
             ]
           },
