@@ -18,8 +18,13 @@ While codeless connectors do not have code, the configuration is in JSON format 
 
 The codeless connector in this repository is configured to poll the [Airtable Audit Logs event retrieval endpoint](https://airtable.com/developers/web/api/audit-log-events) every 5 minutes and request up to 100 events per page. If there is another page of results available, the connector will automatically retrieve the next page of events.
 
-It is strongly recommended you use a personal access token belonging to a [service account](https://support.airtable.com/docs/en/service-accounts-overview). The service account will need to be made an admin for your enterprise account and the personal access token will need to have the [`enterprise.auditLogs:read`](https://airtable.com/developers/web/api/scopes#enterprise-audit-logs-read) scope.
+
 
 ### Setup / deploy
 
-[Microsoft documents the steps to deploy a connector in Microsoft Sentinel here](https://learn.microsoft.com/en-us/azure/sentinel/create-codeless-connector?tabs=deploy-via-arm-template%2Cconnect-via-the-azure-portal#deploy-your-connector-in-microsoft-sentinel-and-start-ingesting-data). [`Azure_Sentinel_Codeless_Connector.json`](./Azure_Sentinel_Codeless_Connector.json) is the example ARM template JSON file you can use for step 1a.
+[Microsoft documents the steps to deploy a connector in Microsoft Sentinel here](https://learn.microsoft.com/en-us/azure/sentinel/create-codeless-connector?tabs=deploy-via-arm-template%2Cconnect-via-the-azure-portal#deploy-your-connector-in-microsoft-sentinel-and-start-ingesting-data). 
+- For step 1: Use [`Azure_Sentinel_Codeless_Connector.json`](./Azure_Sentinel_Codeless_Connector.json) as the custom ARM template for your custom deployment in the Azure console.
+- For step 2: The configuration wizard will ask you for your Airtable Enterprise Account ID and API key.
+  - Airtable Enterprise Account ID: This ID starts with the letters "ent" and can be found in the left-hand side bar of your Enterprise Admin console.
+  - API key: We recommended you use a personal access token belonging to a [service account](https://support.airtable.com/docs/en/service-accounts-overview). The service account will need to be made an admin for your enterprise account and the personal access token will need to have the [`enterprise.auditLogs:read`](https://airtable.com/developers/web/api/scopes#enterprise-audit-logs-read) scope.
+- For step 3: In testing, we have found it takes 20 to 30 minutes for an Azure codeless connector to begin retrieving logs. After this period, you should see a new `AirtableAuditLogs_CL` table in your Sentinel log explorer.
