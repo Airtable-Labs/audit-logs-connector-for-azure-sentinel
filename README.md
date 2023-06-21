@@ -23,10 +23,10 @@ The example connector is configured to add audit log events from Airtable to the
 
 ### Setup / deploy
 
-[Microsoft documents the steps to deploy a connector in Microsoft Sentinel here](https://learn.microsoft.com/en-us/azure/sentinel/create-codeless-connector?tabs=deploy-via-arm-template%2Cconnect-via-the-azure-portal#deploy-your-connector-in-microsoft-sentinel-and-start-ingesting-data). 
+To setup this codeless connector in your Azure environment, follow [Microsoft's deployment steps](https://learn.microsoft.com/en-us/azure/sentinel/create-codeless-connector?tabs=deploy-via-arm-template%2Cconnect-via-the-azure-portal#deploy-your-connector-in-microsoft-sentinel-and-start-ingesting-data) with the following guidance:
 - For step 1: Use [`Azure_Sentinel_Codeless_Connector.json`](./Azure_Sentinel_Codeless_Connector.json) as the custom ARM template for your custom deployment in the Azure console.
-- For step 2: The configuration wizard will ask you for your Airtable Enterprise Account ID and API key. (as shown in the screenshot below) 
-  - Airtable Enterprise Account ID: This ID starts with the letters "ent" and can be found in the left-hand side bar of your Enterprise Admin console.
+- For step 2: The configuration wizard will ask you for your Airtable Enterprise Account ID and API key (screenshot below). 
+  - Airtable Enterprise Account ID: This ID starts with the letters "ent" and can be found in the left-hand sidebar of your Enterprise Admin console.
   - API key: We recommended you use a personal access token belonging to a [service account](https://support.airtable.com/docs/en/service-accounts-overview). The service account will need to be made an admin for your enterprise account and the personal access token will need to have the [`enterprise.auditLogs:read`](https://airtable.com/developers/web/api/scopes#enterprise-audit-logs-read) scope.
 - For step 3: In testing, we have found it takes 20 to 30 minutes for an Azure codeless connector to begin retrieving logs. After this period, you should see a new `AirtableAuditLogs_CL` table in your Sentinel log explorer.
 
