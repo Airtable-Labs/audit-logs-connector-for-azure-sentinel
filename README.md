@@ -8,17 +8,17 @@ The software made available from this repository is not supported by Formagrid I
 
 ---
 
-### Overview
+### Overview of Sentinel Codeless Connectors
 
-Microsoft Sentinel has [several options for creating custom connectors](https://learn.microsoft.com/en-us/azure/sentinel/create-custom-connector). Codeless Connectors are described as "Best for less technical audiences to create SaaS connectors using a configuration file instead of advanced development." and have the benefit of not requiring any infrastructure: Microsoft Sentinel will use the configuration to poll the Audit Log API for you.
+Microsoft Sentinel has [several options for creating custom connectors](https://learn.microsoft.com/en-us/azure/sentinel/create-custom-connector). Codeless Connectors are "best for less technical audiences to create SaaS connectors using a configuration file instead of advanced development." and have the benefit of not requiring any infrastructure: Microsoft Sentinel will use the configuration to poll the specified API for you.
 
 While codeless connectors do not have code, the configuration is in JSON format and requires familiarity with HTTP-based APIs and pagination. The example file in this repository is preconfigured to work with Airtable's Audit Logs API based on [Microsoft's instructions on how to create a codeless connector](https://learn.microsoft.com/en-us/azure/sentinel/create-codeless-connector). 
 
-### About this codeless connector
+### About this Codeless Connector for Airtable Audit Logs
 
 The codeless connector in this repository is configured to poll the [Airtable Audit Logs event retrieval endpoint](https://airtable.com/developers/web/api/audit-log-events) every 5 minutes and request up to 100 events per page. If there is another page of results available, the connector will automatically retrieve the next page of events.
 
-The example connector is configured to add audit logs from Airtable to the `AirtableAuditLogs_CL` table. If the table does not yet exist, the codeless connector will create it. 
+The example connector is configured to add audit log events from Airtable to the `AirtableAuditLogs_CL` table. If the table does not yet exist, the codeless connector will create it. 
 
 
 ### Setup / deploy
