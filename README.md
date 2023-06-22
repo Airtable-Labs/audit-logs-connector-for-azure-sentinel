@@ -1,6 +1,6 @@
 # Azure Sentinel Connector for Airtable Audit Logs
 
-This repository contains an example Microsoft Sentinel codeless connector ([`Azure_Sentinel_Codeless_Connector.json`](./Azure_Sentinel_Codeless_Connector.json)) to help you continuously ingest [Airtable Audit Logs](https://airtable.com/developers/web/api/audit-logs-overview) into the [Microsoft Sentinel](https://azure.microsoft.com/en-us/products/microsoft-sentinel/) ecosystem without the needing to write code or host additional infrastructure.
+This repository contains an example Microsoft Sentinel codeless connector ([`Azure_Sentinel_Codeless_Connector.json`](./Azure_Sentinel_Codeless_Connector.json)) to help you continuously ingest [Airtable Audit Logs](https://airtable.com/developers/web/api/audit-logs-overview) into the [Microsoft Sentinel](https://azure.microsoft.com/en-us/products/microsoft-sentinel/) ecosystem without needing to write code or host additional infrastructure.
 
 ---
 
@@ -10,7 +10,7 @@ The software made available from this repository is not supported by Formagrid I
 
 ### Overview of Sentinel Codeless Connectors
 
-Microsoft Sentinel has [several options for creating custom connectors](https://learn.microsoft.com/en-us/azure/sentinel/create-custom-connector). Codeless Connectors are "best for less technical audiences to create SaaS connectors using a configuration file instead of advanced development." and have the benefit of not requiring any infrastructure: Microsoft Sentinel will use the configuration to poll the specified API for you.
+Microsoft Sentinel has [several options for creating custom connectors](https://learn.microsoft.com/en-us/azure/sentinel/create-custom-connector). Codeless Connectors are "best for less technical audiences to create SaaS connectors using a configuration file instead of advanced development" and have the benefit of not requiring any infrastructure: Microsoft Sentinel will use the configuration to poll the specified API for you.
 
 While codeless connectors do not have code, the configuration is in JSON format and requires familiarity with HTTP-based APIs and pagination. The example file in this repository is preconfigured to work with Airtable's Audit Logs API based on [Microsoft's instructions on how to create a codeless connector](https://learn.microsoft.com/en-us/azure/sentinel/create-codeless-connector). 
 
